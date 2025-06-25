@@ -24,37 +24,37 @@ const Homepage = () => {
               src: 'https://images.unsplash.com/photo-1565953522043-baea26b83b7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFwYXJ0bWVudCUyMGJ1aWxkaW5nfGVufDB8fDB8fHww',
               alt: 'Apartments',
               title: 'Explore Apartments',
-              description: 'Find modern and comfortable apartments for your stay.',
+              description: 'View Details',
             },
             {
               src: 'https://plus.unsplash.com/premium_photo-1682377521753-58d1fd9fa5ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmlsbGFzfGVufDB8fDB8fHww',
               alt: 'Villas',
               title: 'Luxurious Villas',
-              description: 'Luxurious villas for a more private and spacious experience.',
+              description: 'View Details',
             },
             {
               src: 'https://images.unsplash.com/photo-1622908382850-34730895ccbb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y290dGFnZXN8ZW58MHx8MHx8fDA%3D',
               alt: 'Cottages',
               title: 'Cottages',
-              description: 'Cozy and charming cottages for a unique getaway.',
+              description: 'View Details',
             },
             {
               src: 'https://media.istockphoto.com/id/1223072133/photo/cityscape-of-a-residential-area-with-modern-apartment-buildings-new-green-urban-landscape-in.jpg?s=1024x1024&w=is&k=20&c=tTo1WpYoZNWZEwYaSCHKp5QF2K12vEh0_y19BOO70sg=',
               alt: 'Townhouses',
               title: 'Townhouses',
-              description: 'Experience luxury living in our townhouses.',
+              description: 'View Details',
             },
             {
               src: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdXNlfGVufDB8fDB8fHww',
               alt: 'Cabins',
               title: 'Cabins',
-              description: 'Enjoy a rustic retreat in our beautiful cabins.',
+              description: 'View Details',
             },
             {
               src: 'https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg',
               alt: 'Studios',
               title: 'Modern Studios',
-              description: 'Find the perfect studio for modern living.',
+              description: 'View Details',
             },
           ].map((card, index) => (
             <div key={index} className="category-card">
