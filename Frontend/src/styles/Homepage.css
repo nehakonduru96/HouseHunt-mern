@@ -1,0 +1,107 @@
+/* General styling for the homepage */
+.homepage {
+  font-family: Arial, sans-serif;
+  border-top: 2px solid white; /* Add top border */
+  border-left: 2px solid white; /* Add left border */
+  border-right: 2px solid white; /* Add right border */
+  padding: 0 16px; /* Padding to ensure space between content and border */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Intro section styling */
+.intro-section {
+  background-color: #EFE9E1;
+  padding: 50px 0;
+  margin-top: 16px; /* Ensure space between border and intro section */
+}
+
+.intro-title {
+  color: #72383D;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  color: #333;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Categories section styling */
+.categories-section {
+  padding: 50px 0;
+  margin-top: 16px; /* Ensure space between sections */
+}
+
+/* Individual category card styling */
+.category-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  margin-bottom: 30px;
+  border-radius: 8px; /* Rounded corners for the cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Image inside the category card */
+.category-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s; /* Smooth zoom effect on hover */
+}
+
+/* Zoom effect on hover for the image */
+.category-card:hover .category-image {
+  transform: scale(1.1);
+}
+
+/* Category title styling */
+.category-title {
+  position: absolute;
+  bottom: 60px; /* Increased space to avoid overlap with description */
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Category description styling */
+.category-text {
+  position: absolute;
+  bottom: 20px; /* Increased space to avoid overlap with title */
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Footer section styling */
+.bg-dark {
+  background-color: #72383d; /* Dark background color */
+  padding: 50px 16px;
+  margin-top: 32px; /* Ensure space between sections */
+  color: white;
+}
+
+/* Ensure responsive design */
+@media (min-width: 640px) {
+  .homepage {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage {
+    padding: 0 32px;
+  }
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff; /* Set background to white */
+}
+
+.loading-text {
+  font-size: 5rem; /* Increase text size */
+  color: #000000; /* Set text color to black */
+  font-family: 'Lobster', cursive; /* Use a more stylish font */
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -20px; /* Move text up slightly */
+}
+
+.house-icon {
+  width: 4rem; /* Double the previous width */
+  height: 4rem; /* Double the previous height */
+  margin-right: 0.5rem;
+  animation: bounceIn 2s forwards; /* Add the bounceIn animation */
+}
+
+.loading-text .letter {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards, scaleUp 0.5s forwards;
+}
+
+.loading-text .letter-1 { animation-delay: 0s; }
+.loading-text .letter-2 { animation-delay: 0.1s; }
+.loading-text .letter-3 { animation-delay: 0.2s; }
+.loading-text .letter-4 { animation-delay: 0.3s; }
+.loading-text .letter-5 { animation-delay: 0.4s; }
+.loading-text .letter-6 { animation-delay: 0.5s; }
+.loading-text .letter-7 { animation-delay: 0.6s; }
+.loading-text .letter-8 { animation-delay: 0.7s; }
+.loading-text .letter-9 { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateX(-100vw);
+  }
+  60% {
+    transform: translateX(30vw);
+  }
+  80% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.loading-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #000000; /* Set the color of the loading bar */
+  animation: load 2s linear forwards; /* Run for 2 seconds */
+}
+
+@keyframes load {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
