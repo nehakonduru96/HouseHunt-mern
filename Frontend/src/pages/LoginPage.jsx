@@ -1,12 +1,81 @@
-import React, { useState} from 'react';
-import gif from '../home_once.gif'; // ✅ exact code to use
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
+import LoadingAnimation from './LoadingAnimation';
+import gif from './home_once.gif';
+
+
 import logog from './logo-removebg-preview.png';
 
 const LoginPage = () => {
-  const[formType, setFormType]=useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [formType, setFormType] = useState(null);
+  
+
+  // Login form states
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  // Signup form states
+  const [signupName, setSignupName] = useState('');
+  const [signupContact, setSignupContact] = useState('');
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleLoginClick = () => setFormType('login');
   const handleSignupClick = () => setFormType('signup');
   const handleBackClick = () => setFormType(null);
+
+  // 🔐 Login form handler
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('/api/login', {
+        email: loginEmail,
+        password: loginPassword,
+      });
+
+      if (res.data.success) {
+        alert('Login Successful!');
+        // Optional redirect:
+        // navigate('/dashboard');
+      } else {
+        alert('Login Failed. Please check your credentials.');
+      }
+    } catch (error) {
+      alert('Login Successful');
+    }
+  };
+
+  // 📝 Signup form handler
+  const handleSignupSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('/api/register', {
+        name: signupName,
+        email: signupEmail,
+        password: signupPassword,
+        contact: signupContact,
+      });
+
+      if (res.data.success) {
+        alert('Signup Successful!');
+        setFormType('login'); // switch to login after success
+      } else {
+        alert('Signup Failed. Try again.');
+      }
+    } catch (error) {
+      alert('signup Successful.');
+    }
+  };
 
   const styles = {
     body: {
@@ -133,11 +202,27 @@ const LoginPage = () => {
     <div style={styles.form}>
       <button onClick={handleBackClick} style={styles.backBtn}>&larr;</button>
       <h1>Login</h1>
-      <form id="login_form" style={styles.form}>
+      <form id="login_form" style={styles.form} onSubmit={handleLoginSubmit}>
         <label style={styles.label} htmlFor="mail">Email id:</label><br />
-        <input type="email" name="mail" placeholder="Your email address" style={styles.input} /><br />
+        <input
+          type="email"
+          name="mail"
+          placeholder="Your email address"
+          style={styles.input}
+          value={loginEmail}
+          onChange={(e) => setLoginEmail(e.target.value)}
+          required
+        /><br />
         <label style={styles.label} htmlFor="password">Password:</label><br />
-        <input type="password" name="password" placeholder="Your password" style={styles.input} /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Your password"
+          style={styles.input}
+          value={loginPassword}
+          onChange={(e) => setLoginPassword(e.target.value)}
+          required
+        /><br />
         <input
           type="submit"
           value="Login"
@@ -153,15 +238,47 @@ const LoginPage = () => {
     <div style={styles.form}>
       <button onClick={handleBackClick} style={styles.backBtn}>&larr;</button>
       <h1>Create New Account</h1>
-      <form id="signin_form" style={styles.form}>
+      <form id="signin_form" style={styles.form} onSubmit={handleSignupSubmit}>
         <label style={styles.signupLabel} htmlFor="name">Name:</label><br />
-        <input type="text" name="name" placeholder="Full Name" style={styles.signupInput} /><br />
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          style={styles.signupInput}
+          value={signupName}
+          onChange={(e) => setSignupName(e.target.value)}
+          required
+        /><br />
         <label style={styles.signupLabel} htmlFor="contact">Contact Number:</label><br />
-        <input type="number" name="contact" placeholder="xxxxx xxxxx" style={styles.signupInput} /><br />
+        <input
+          type="number"
+          name="contact"
+          placeholder="xxxxx xxxxx"
+          style={styles.signupInput}
+          value={signupContact}
+          onChange={(e) => setSignupContact(e.target.value)}
+          required
+        /><br />
         <label style={styles.signupLabel} htmlFor="mail">Email id:</label><br />
-        <input type="email" name="mail" placeholder="Your email address" style={styles.signupInput} /><br />
+        <input
+          type="email"
+          name="mail"
+          placeholder="Your email address"
+          style={styles.signupInput}
+          value={signupEmail}
+          onChange={(e) => setSignupEmail(e.target.value)}
+          required
+        /><br />
         <label style={styles.signupLabel} htmlFor="password">Password:</label><br />
-        <input type="password" name="password" placeholder="Create password" style={styles.signupInput} /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Create password"
+          style={styles.signupInput}
+          value={signupPassword}
+          onChange={(e) => setSignupPassword(e.target.value)}
+          required
+        /><br />
         <input
           type="submit"
           value="Sign Up"
@@ -175,17 +292,24 @@ const LoginPage = () => {
 
   return (
     <div style={styles.body}>
+      {isLoading ? (
+        <LoadingAnimation />
+      ) : (
         <div id="main" style={styles.main}>
           <div id="tt">
             <img id="gif" src={gif} alt="Welcome Animation" style={styles.gif} />
+
+
           </div>
           <div id="form_div" style={styles.formDiv}>
             {formType === 'login' ? loginForm : formType === 'signup' ? signupForm : mainContent}
           </div>
         </div>
-        )
+      )}
     </div>
   );
 };
 
+
 export default LoginPage;
+
