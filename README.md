@@ -42,19 +42,19 @@
 
 ```bash
 # 🔁 Step 1: Clone the Repository
-git clone https://github.com/Madhumitha0027/HouseHunt-mern
-cd househunt
+ git clone https://github.com/Madhumitha0027/HouseHunt-mern
+ cd househunt
 
 # 🖥️ Step 2: Backend Setup
-cd server
-npm install
-npm start
+ cd server
+ npm install
+ npm start
 
 # 💻 Step 3: Frontend Setup (Open a new terminal)
-cd ../client
-npm install
-npm start
+ cd ../client
+ npm install
+ npm start
 
 # 🚀 Step 4: Access the Application
-Open your browser and visit:
-http://localhost:3000
+ Open your browser and visit:
+ http://localhost:3000
