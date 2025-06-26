@@ -58,3 +58,8 @@
 # 🚀 Step 4: Access the Application
  Open your browser and visit:
  http://localhost:3000
+
+You can now:
+👤 Sign up as a Renter to browse and book properties
+🧑‍💼 Register as an Owner (pending admin approval)
+🔐 Explore the Admin Dashboard for platform management (if applicable)
