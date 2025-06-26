@@ -38,25 +38,3 @@
 👉(https://drive.google.com/drive/folders/1Jgow8_KkyyQPgJiSz1_IruzSbc7h7W8v?usp=drive_link)
 
 ---
-
-## 📦 Installation Guide:
-
-🔁 Step 1: Clone the Repository
-      git clone https://github.com/Madhumitha0027/HouseHunt-mern
-      cd househunt
-🖥️ 2. Backend Setup
-      cd server
-      npm install
-      npm start
-💻 3. Frontend Setup (Open new terminal)
-      cd ../client
-      npm install
-      npm start
-🚀 4. Access the Application
-      Open your browser and visit:
-      http://localhost:3000
-
-You can now:
-👤 Sign up as a Renter to browse and book properties
-🧑‍💼 Register as an Owner (pending admin approval)
-🔐 Explore the Admin Dashboard for platform management (if applicable)
