@@ -51,7 +51,6 @@
  npm start
 
 # 💻 Step 3: Frontend Setup (Open a new terminal)
- cd ../client
  npm install
  npm start
 
