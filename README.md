@@ -32,6 +32,12 @@
 - *Utilities:* RESTful APIs, Moment.js, dotenv
 
 ---
+
+## 📹 Demo Video:
+
+👉(https://drive.google.com/drive/folders/1Jgow8_KkyyQPgJiSz1_IruzSbc7h7W8v?usp=drive_link)
+
+---
 ## 📦 Installation Guide
 
 ```bash
@@ -52,9 +58,3 @@ npm start
 # 🚀 Step 4: Access the Application
 Open your browser and visit:
 http://localhost:3000
-
-## 📹 Demo Video:
-
-👉(https://drive.google.com/drive/folders/1Jgow8_KkyyQPgJiSz1_IruzSbc7h7W8v?usp=drive_link)
-
----
