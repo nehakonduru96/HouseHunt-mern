@@ -1,6 +1,6 @@
 # 🏠 HouseHunt: Finding Your Perfect Rental Home
 
-*HouseHunt* is a full-stack *MERN* (MongoDB, Express.js, React.js, Node.js) web application that streamlines the process of renting, listing, and managing residential properties. It connects renters and property owners through a secure and easy-to-use platform.
+*HouseHunt* is a full-stack *MERN* (MongoDB, Express.js, React.js, Node.js) web application that streamlines the process of renting, listing, and managing residential properties. It connects renters and property owners through a secure and easy-to-use.
 
 ---
 
